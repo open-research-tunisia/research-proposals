@@ -6,9 +6,8 @@ theme: jekyll-theme-cayman
 # so the theme's CSS/asset links resolve. If you name the repo something other than
 # "research-proposals", change this to "/<your-repo-name>".
 baseurl: "/research-proposals"
-# url: "https://USERNAME.github.io"   # optional: set to your Pages domain
 
-# Keep LaTeX sources in the repo for provenance, but don't publish them to the site.
+# Keep LaTeX sources in the repo for the record, but don't publish them to the site.
 exclude:
   - "*.tex"
   - "*.bib"
