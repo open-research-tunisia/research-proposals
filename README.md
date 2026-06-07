@@ -2,7 +2,7 @@
 
 Source for a small GitHub Pages site listing short research proposals that are open for collaboration.
 
-- **Live site:** https://USERNAME.github.io/research-proposals/  _(update USERNAME after enabling Pages)_
+- **Live site:** https://open-research-tunisia.github.io/research-proposals/
 - **Homepage source:** [`index.md`](index.md)
 - **Proposals:** one folder each (e.g. [`phase-conditioned-sparsity/`](phase-conditioned-sparsity/)), each with an `index.md` and a `figures/` directory.
 
