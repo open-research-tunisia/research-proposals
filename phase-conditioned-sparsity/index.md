@@ -1,6 +1,6 @@
 ---
 title: "Phase-Conditioned Sparsity for Automated Program Repair"
-description: "A research proposal — seeking collaborators"
+description: "ID:P0069"
 ---
 
 # Overview
