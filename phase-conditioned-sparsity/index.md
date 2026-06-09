@@ -5,45 +5,16 @@ description: "ID:P0069"
 
 # Overview
 
-Software bugs are costly. Beyond the developer effort spent resolving
-them, they can trigger failures with substantial financial
-consequences ([Federal Communications Commission 2024](#ref-BentonFCC2024); [Business Insider 2024](#ref-BusinessInsider2024); [Zahn et al. 2024](#ref-ZahnEtAl2024)). Resolving such bugs is therefore a challenge in
-software development ([Zou et al. 2020](#ref-Zouz2020)), and a time-consuming one:
-developers are estimated to spend roughly half of their time on
-debugging and bug resolution ([Britton et al. 2013](#ref-Britton2013)). This process is
-cognitively demanding, as it requires a deep understanding of the
-codebase ([Yoon and Garcia 1998](#ref-ByungDo1998); [Hu et al. 2024](#ref-Hu2024)). To assist developers
-with this activity, automated program repair (APR) has been
-proposed ([Gazzola, Micucci, and Mariani 2019](#ref-Gazzola2019)). Traditionally, these
-systems have relied on information retrieval and template-based
-solutions. However, these approaches are often rigid, making it
-difficult to extrapolate them to unseen scenarios. Large language models
-(LLMs) and LLM-based systems offer great promise in this regard: because
-these massive models are trained on vast datasets, they possess stronger
-generalization capabilities. Methods like Agentless ([Xia et al. 2025](#ref-Xia2025))
-and SWE-agent ([Yang et al. 2024](#ref-Yang2024sweagent)) demonstrate a remarkable aptitude for
-resolving issues compared to classical APR methods.
+Software bugs are costly. Beyond the developer effort spent resolving them, they can trigger failures with substantial financial consequences ([Federal Communications Commission 2024](#ref-BentonFCC2024); [Business Insider 2024](#ref-BusinessInsider2024); [Zahn et al. 2024](#ref-ZahnEtAl2024)). Resolving such bugs is therefore a challenge in software development ([Zou et al. 2020](#ref-Zouz2020)), and a time-consuming one. Indeed, developers are estimated to spend roughly half of their time on debugging and bug resolution ([Britton et al. 2013](#ref-Britton2013)). This process is cognitively demanding, as it requires a deep understanding of the codebase ([Yoon and Garcia 1998](#ref-ByungDo1998); [Hu et al. 2024](#ref-Hu2024)). 
 
-However, the massive scale of these models makes them expensive to
-operate. This cost is multifaceted: computational (requiring extensive
-arithmetic operations), monetary (demanding high-end computing
-infrastructure), and environmental (correlating increased compute with
-higher emissions). It is well established that LLMs are
-over-parameterized: not every neuron contributes equally to a given
-computation, and ablating a subset can incur only minimal performance
-degradation ([Voita et al. 2019](#ref-Voita2019); [Sandoval-Segura et al. 2026](#ref-Sandovalsegura2026identifying); [Dong, Chen, and Chi 2024](#ref-Dong2024promptprompted)). Moreover, the set of components that matter is often
-*input-dependent*, a phenomenon known as contextual sparsity ([Liu et al. 2023](#ref-Liu2023dejavu)), and prior work has localized specific skills or functions to
-identifiable groups of neurons ([Wang et al. 2022](#ref-Wang2022skillneurons)). Separately, automated
-bug resolution follows a structured workflow: localizing the bug,
-reproducing it, issuing a patch, and finally running tests to verify the
-fix and check for regressions. In light of these two observations, we
-hypothesize that distinct regions of the network could be activated
-during the phases of the APR process. A pictorial representation of this
-hypothesis is illustrated in Figure 1. If this holds, the phase becomes a
-conditioning signal for sparsity: because an APR agent always knows
-which phase it is currently executing, we could selectively activate (or
-prune) only the relevant regions per phase, reducing the floating-point
-operations and latency of each step without sacrificing repair accuracy.
+To assist developers with this activity, automated program repair (APR) has been proposed ([Gazzola, Micucci, and Mariani 2019](#ref-Gazzola2019)). Traditionally, these systems have relied on information retrieval and template-based solutions. However, these approaches are often rigid, making it difficult to extrapolate them to unseen scenarios. Large language models
+(LLMs) and LLM-based systems offer great promise in this regard. Such overly parameterized models are trained on vast datasets, and possess stronger generalization capabilities. Methods like Agentless ([Xia et al. 2025](#ref-Xia2025)) and SWE-agent ([Yang et al. 2024](#ref-Yang2024sweagent)) demonstrate a remarkable aptitude for resolving issues compared to classical APR methods.
+
+However, their massive scale makes them expensive to operate. This cost is multifaceted: computational (requiring extensive arithmetic operations), monetary (demanding high-end computing
+infrastructure), and environmental (correlating increased compute with higher emissions). It is well established that LLMs are over-parameterized, meaning, not every neuron contributes equally to a given computation, and ablating a subset can incur only minimal performance degradation ([Voita et al. 2019](#ref-Voita2019); [Sandoval-Segura et al. 2026](#ref-Sandovalsegura2026identifying); [Dong, Chen, and Chi 2024](#ref-Dong2024promptprompted)). Moreover, the set of components that matter is often *input-dependent*, a phenomenon known as contextual sparsity ([Liu et al. 2023](#ref-Liu2023dejavu)), and prior work has localized specific skills or functions to identifiable groups of neurons ([Wang et al. 2022](#ref-Wang2022skillneurons)). 
+
+Separately, automated bug resolution follows a structured workflow. First, the process starts by localizing the bug, reproducing it, issuing a patch, and finally running tests to verify the
+fix and check for regressions. In light of these two observations, we hypothesize that distinct regions of the network could be activated during the phases of the APR process. A pictorial representation of this hypothesis is illustrated in Figure 1. If this holds, the phase becomes a conditioning signal for sparsity. This is because an APR agent always knows which phase it is currently executing, we could selectively activate (or prune) only the relevant regions per phase, reducing the floating-point operations and latency of each step without sacrificing repair accuracy.
 
 ![Main hypothesis that states that regions of the network are conditioned on the phase of automated program repair.](figures/apr_phase_neuron_activation_grid-1.png)
 
