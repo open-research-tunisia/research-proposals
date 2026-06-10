@@ -12,6 +12,8 @@ Open Research Tunisia v0.1 is an initiative that aims to connect Tunisian gradua
 
 - **[Exploring Venues in the Topic of Latent Communication Between Language Models](latent-communication/)** — Can two language models coordinate by exchanging their internal state directly instead of collapsing their thinking into text? If so, what are the implications, and how can such communication be extended over different modalities (e.g. image-text, text-image).
 
+- **[Relational AutoML in the Era of Agentic AI](relational-automl/)** — Most real-world data lives in relational databases, yet ML still demands a single flat table. Can relational machine learning let us learn in place without flattening or moving the data, and what formalism and infrastructure (e.g. database clones) would let an agent reason about schema exploration, feature enrichment, and model search together?
+
 ## Contact
 
 If you have any questions, please email them to open-research-tunisia@googlegroups.com
