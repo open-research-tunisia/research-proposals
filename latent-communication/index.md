@@ -57,7 +57,7 @@ The following are qualifications that are nice-to-have, but can be acquired thro
 
 # References
 
-- <a id="ref-Du2026interlat"></a>Du, Xiao, et al. 2026. "Enabling Agents to Communicate Entirely in Latent Space (Interlat)." arXiv:2511.09149. <https://arxiv.org/abs/2511.09149>. Code: <https://github.com/XiaoDuflying/Interlat>.
+- <a id="ref-Du2026interlat"></a>Du, Zhuoyun, et al. 2026. "Enabling Agents to Communicate Entirely in Latent Space (Interlat)." arXiv:2511.09149. <https://arxiv.org/abs/2511.09149>. Code: <https://github.com/XiaoDu-flying/Interlat>.
 
 - <a id="ref-Hao2024coconut"></a>Hao, Shibo, Sainbayar Sukhbaatar, DiJia Su, Xian Li, Zhiting Hu, Jason Weston, and Yuandong Tian. 2024. "Training Large Language Models to Reason in a Continuous Latent Space." arXiv:2412.06769. <https://arxiv.org/abs/2412.06769>.
 
